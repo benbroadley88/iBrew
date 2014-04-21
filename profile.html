@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<header>
+<a href="profile.html">P</a>
+<a href="profile.html">P</a>
+<div class="heading">iBrew</div>
+<a href="people.html">PP</a>
+<a href="people.html">PP</a>
+</header>
+<div class="body">
+	<div class="details">
+		<div class="profileImg">
+			<img src="images/profilePic.jpg"/>
+		</div>
+		<div class="name">
+			<span id="username">User Name</span>
+			<span id="realname">Real Name</span>
+		</div>
+	</div>
+	<div class="teaDetails">
+		<div class="left">
+			<div class="howTaken">
+				<span id="sugar">Sugar x 2</span>
+				<span id="milk">Milk</span>
+			</div>
+			<div class="mug">
+				<span id="mugColour">Red Mug</span>
+			</div>
+		</div>
+		<div class="right">
+			<div id="teaColour">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="advert"></div>
+
+
+<script type="text/javascript">
+	var usernameArea = document.getElementById('username');
+	
+	
+	usernameArea.addEventListener("click",edit,false);
+	
+	
+	function edit(e){
+		//console.log(e);
+		e.target.outerHTML = "<input type='text' id='username' placeholder='username'/><span id='submitBtn'>Submit</span>";
+		var submitBtn = document.getElementById('submitBtn');
+		submitBtn.addEventListener("click",update,false);
+	}
+	function update(e) {
+		//console.log(e.target.previousSibling.value);
+		console.log(e.target.previousSibling);
+		e.target.previousSibling.outerHtml = "<span id='username'>" + e.target.previousSibling.value + "</span>";
+		e.target.outterHtml = "";
+		
+		
+	}
+</script>
+</body>
+</html>
